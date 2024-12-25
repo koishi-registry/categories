@@ -14,6 +14,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -32,7 +33,7 @@ jobs:
       - name: Debounce 1 minute
         uses: zachary95/github-actions-debounce@v0.1.0
         with:
-          wait: 240
+          wait: 60
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
